@@ -1,0 +1,29 @@
+﻿<Application x:Class="CoinRecorder.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CoinRecorder"
+             xmlns:vievModel="clr-namespace:CoinRecorder.MVVM.ViewModel"
+             xmlns:viev="clr-namespace:CoinRecorder.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type vievModel:HomeViewModel}">
+                <viev:HomeViev/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vievModel:DiscoveryViewModel}">
+                <viev:DiscoveryView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vievModel:FeaturedViewModel}">
+                <viev:FeaturedView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
